@@ -7,9 +7,8 @@ function App() {
   return (
     <div>
       <Header title = {'Horned Beasts'} />
+      <Main />
       <Footer author = {'Kaeden'} />
-      <Main name = {'check'} />
-      <Main name = {'check'} />
     </div>
   );
 }
