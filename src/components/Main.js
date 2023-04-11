@@ -1,3 +1,7 @@
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Image from 'react-bootstrap/Image';
 import { HeartFill } from 'react-bootstrap-icons';
 import { Component } from 'react';
 import Beasts from '../beasts.json';
@@ -5,18 +9,26 @@ import Beasts from '../beasts.json';
 class Main extends Component {
 
     render() {
-       return (
-        <div>
+        return (
+            <div>
+                <Container>
+                    <Row>
+                        {
+                            Beasts.map(beast => {
+                                return (
+                                   <Col>
+                                   <HornedBeast title={beast.title} imageUrl={beast.image_url} description={beast.description} />
+                                   
+                                   </Col>
+                                )
+                            })
+                        }
 
-         {
-            Beasts.map(beast =>{
-                return (
-                    <HornedBeast title={beast.title} imageUrl={beast.image_url} description={beast.description} />
-                )
-            })
-         }
-        </div>
-       );
+                    </Row>
+                </Container>
+
+            </div>
+        );
     }
 }
 
@@ -30,7 +42,7 @@ class HornedBeast extends Component {
     }
 
     handleClick = () => {
-        this.setState({count: this.state.count + 1});
+        this.setState({ count: this.state.count + 1 });
         // console.log(this.state.count)
     }
 
@@ -39,7 +51,7 @@ class HornedBeast extends Component {
         return (
             <div onClick={this.handleClick}>
                 <h2>Title: {this.props.title}</h2>
-                <img title= {this.props.title} src= {this.props.imageUrl} alt={this.props.description}/>
+                <Image title={this.props.title} src={this.props.imageUrl} alt={this.props.description} fluid rounded/>
                 <p>{this.props.description}</p>
                 <p>Favorites: {this.state.count} <HeartFill /></p>
             </div>
