@@ -2,7 +2,7 @@ import React from 'react';
 
 class Footer extends React.Component {
     render() {
-       return <p>{this.props.author}</p>;
+       return <p>Kaeden</p>;
     }
 }
 

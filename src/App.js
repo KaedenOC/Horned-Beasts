@@ -6,9 +6,9 @@ import './App.css';
 function App() {
   return (
     <div>
-      <Header title = {'Horned Beasts'} />
+      <Header />
       <Main />
-      <Footer author = {'Kaeden'} />
+      <Footer />
     </div>
   );
 }
