@@ -1,3 +1,4 @@
+import { HeartFill } from 'react-bootstrap-icons';
 import { Component } from 'react';
 import Beasts from '../beasts.json';
 
@@ -40,7 +41,7 @@ class HornedBeast extends Component {
                 <h2>Title: {this.props.title}</h2>
                 <img title= {this.props.title} src= {this.props.imageUrl} alt={this.props.description}/>
                 <p>{this.props.description}</p>
-                <p>Favorites: {this.props.state}</p>
+                <p>Favorites: {this.state.count} <HeartFill /></p>
             </div>
         )
     }
