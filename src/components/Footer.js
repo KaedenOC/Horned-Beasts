@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 class Footer extends Component {
     render() {
-       return <p>Kaeden</p>;
+       return <p className="text-center mx-auto">Kaeden</p>;
     }
 }
 
