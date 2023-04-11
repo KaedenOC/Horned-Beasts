@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 
 
-class Main extends React.Component {
+class Main extends Component {
     render() {
        return (
         <>
@@ -12,7 +12,7 @@ class Main extends React.Component {
     }
 }
 
-class HornedBeast extends React.Component {
+class HornedBeast extends Component {
     render() {
         return (
             <>
