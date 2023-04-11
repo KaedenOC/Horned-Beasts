@@ -16,7 +16,7 @@ class Main extends Component {
                         {
                             Beasts.map(beast => {
                                 return (
-                                   <Col>
+                                   <Col xs={6} md={4}>
                                    <HornedBeast title={beast.title} imageUrl={beast.image_url} description={beast.description} />
                                    
                                    </Col>
