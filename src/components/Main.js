@@ -16,7 +16,7 @@ class Main extends Component {
                         {
                             Beasts.map(beast => {
                                 return (
-                                   <Col xs={6} md={4}>
+                                   <Col xs={12} md={4}>
                                    <HornedBeast title={beast.title} imageUrl={beast.image_url} description={beast.description} />
                                    
                                    </Col>
@@ -50,8 +50,8 @@ class HornedBeast extends Component {
     render() {
         return (
             <div onClick={this.handleClick}>
-                <h2>Title: {this.props.title}</h2>
-                <Image title={this.props.title} src={this.props.imageUrl} alt={this.props.description} fluid rounded/>
+                <h2>{this.props.title}</h2>
+                <Image title={this.props.title} src={this.props.imageUrl} alt={this.props.description} fluid thumbnail/>
                 <p>{this.props.description}</p>
                 <p>Favorites: {this.state.count} <HeartFill /></p>
             </div>
