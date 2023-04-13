@@ -26,3 +26,14 @@ Start time: 3:00pm
 
 Finish time: 4:50pm
 Actual time needed to complete: N/A
+
+## Labo 03
+
+Number and name of feature: Feature #1: Display a Modal
+
+Estimate of time needed to complete: N/A
+
+Start time: 2:00pm
+
+Finish time: 9:10pm
+Actual time needed to complete: N/A

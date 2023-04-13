@@ -11,12 +11,12 @@ class HornedBeast extends Component {
         super(props);
         this.state = {
             count: 0
-        }
+        };
     }
 
     handleClick = () => {
         this.setState({ count: this.state.count + 1 });
-        // console.log(this.state.count)
+        this.props.clickState(this.props.title, this.props.imageUrl, this.props.description);
     }
 
 
@@ -24,7 +24,7 @@ class HornedBeast extends Component {
         return (
             <div onClick={this.handleClick}>
                 <h2>{this.props.title}</h2>
-                <Image title={this.props.title} src={this.props.imageUrl} alt={this.props.description} fluid thumbnail/>
+                <Image title={this.props.title} src={this.props.imageUrl} alt={this.props.description} fluid thumbnail />
                 <p>{this.props.description}</p>
                 <p>Favorites: {this.state.count} <HeartFill /></p>
             </div>
