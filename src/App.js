@@ -41,6 +41,7 @@ class App extends Component {
     });
 
     this.setState({ filteredBeast: filteredBeast });
+    // allows you to update the state of a component
   };
 
   updateSelectedBeast = (beast, url, description) => {
