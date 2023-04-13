@@ -7,11 +7,22 @@ import Beasts from './beasts.json';
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+        clickedBeast: null
+    };
+}
+
+  updateSelectedBeast = (beast) => {
+    this.setState({ clickedBeast: beast });
+  }
+
   render() {
     return (
       <div>
         <Header />
-        <Main beasts={Beasts} />
+        <Main beasts={Beasts} updateSelectedBeast={this.updateSelectedBeast}/>
         <Footer />
       </div>
     );
