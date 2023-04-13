@@ -5,6 +5,7 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import Beasts from './beasts.json';
 import SelectedBeast from './components/SelectedBeast';
+import HornForm from './components/Form';
 
 class App extends Component {
 
@@ -36,6 +37,7 @@ class App extends Component {
     return (
       <div>
         <Header />
+        <HornForm />
         <Main beasts={Beasts} selectedBeast={this.updateSelectedBeast} />
         <SelectedBeast beasts={Beasts} chosenBeast={this.state.clickedBeast} beastImg={this.state.beastImg} beastDescription={this.state.beastDescription} show={this.state.showModal} onClose={this.closeModalHandler}/>
         <Footer />
