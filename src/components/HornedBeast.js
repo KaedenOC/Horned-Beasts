@@ -16,11 +16,7 @@ class HornedBeast extends Component {
 
     handleClick = () => {
         this.setState({ count: this.state.count + 1 });
-        this.props.updateSelectedBeast({
-            title: this.props.title,
-            imageUrl: this.props.imageUrl,
-            description: this.props.description,
-        });
+        this.props.clickState(this.props.title, this.props.imageUrl, this.props.description);
     }
 
 

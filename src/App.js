@@ -11,17 +11,24 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      clickedBeast: null,
+      clickedBeast: '',
       showModal: false,
+      beastImg: '',
+      beastDescription: '',
     };
   }
 
-  updateSelectedBeast = (beast) => {
-    this.setState({ clickedBeast: beast, showModal: true });
+  updateSelectedBeast = (beast, url, description) => {
+    this.setState({
+      clickedBeast: beast,
+      showModal: true,
+      beastImg: url,
+      beastDescription: description,
+    });
   }
 
   closeModalHandler = () => {
-    this.setState({ clickedBeast: null, showModal: false });
+    this.setState({ showModal: false });
   }
 
   render() {
@@ -29,11 +36,8 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Main beasts={Beasts} updateSelectedBeast={this.updateSelectedBeast} />
-        <SelectedBeast show={this.state.showModal} onClose={this.closeModalHandler}
-          title={this.state.clickedBeast ? this.state.clickedBeast.title : ''}
-          imageUrl={this.state.clickedBeast ? this.state.clickedBeast.imageUrl : ''}
-          description={this.state.clickedBeast ? this.state.clickedBeast.description : ''} />
+        <Main beasts={Beasts} selectedBeast={this.updateSelectedBeast} />
+        <SelectedBeast beasts={Beasts} chosenBeast={this.state.clickedBeast} beastImg={this.state.beastImg} beastDescription={this.state.beastDescription} show={this.state.showModal} onClose={this.closeModalHandler}/>
         <Footer />
       </div>
     );

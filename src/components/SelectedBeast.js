@@ -9,11 +9,11 @@ class SelectedBeast extends Component {
         return (
             <Modal show={this.props.show} onHide={this.props.onClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>{this.props.title}</Modal.Title>
+                    <Modal.Title>{this.props.chosenBeast}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Image src={this.props.imageUrl} alt={this.props.title} fluid/>
-                    <p>{this.props.description}</p>
+                    <Image src={this.props.beastImg} alt={this.props.title} fluid/>
+                    <p>{this.props.beastDescription}</p>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant='secondary' onClick={this.props.onClose}>Close</Button>

@@ -19,7 +19,7 @@ class Main extends Component {
                             this.props.beasts.map(beast => {
                                 return (
                                     <Col xs={12} md={4}>
-                                        <HornedBeast title={beast.title} imageUrl={beast.image_url} description={beast.description} updateSelectedBeast={this.props.updateSelectedBeast} />
+                                        <HornedBeast title={beast.title} imageUrl={beast.image_url} description={beast.description} clickState={this.props.selectedBeast} />
 
                                     </Col>
                                 )
