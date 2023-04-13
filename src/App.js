@@ -11,10 +11,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        clickedBeast: null,
-        showModal: false,
+      clickedBeast: null,
+      showModal: false,
     };
-}
+  }
 
   updateSelectedBeast = (beast) => {
     this.setState({ clickedBeast: beast, showModal: true });
@@ -29,8 +29,11 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Main beasts={Beasts} updateSelectedBeast={this.updateSelectedBeast}/>
-        <SelectedBeast show={this.state.showModal} onClose={this.closeModalHandler}/>
+        <Main beasts={Beasts} updateSelectedBeast={this.updateSelectedBeast} />
+        <SelectedBeast show={this.state.showModal} onClose={this.closeModalHandler}
+          title={this.state.clickedBeast ? this.state.clickedBeast.title : ''}
+          imageUrl={this.state.clickedBeast ? this.state.clickedBeast.imageUrl : ''}
+          description={this.state.clickedBeast ? this.state.clickedBeast.description : ''} />
         <Footer />
       </div>
     );

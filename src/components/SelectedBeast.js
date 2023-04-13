@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image';
 // import Beasts from '../beasts.json';
 
 class SelectedBeast extends Component {
@@ -8,10 +9,10 @@ class SelectedBeast extends Component {
         return (
             <Modal show={this.props.show} onHide={this.props.onClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Beast</Modal.Title>
+                    <Modal.Title>{this.props.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <img src={this.props.src} alt={this.props.title} />
+                    <Image src={this.props.imageUrl} alt={this.props.title} fluid/>
                     <p>{this.props.description}</p>
                 </Modal.Body>
                 <Modal.Footer>
