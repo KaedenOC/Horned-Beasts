@@ -6,14 +6,18 @@ import Row from 'react-bootstrap/Row';
 import { Component } from 'react';
 // import Beasts from '../beasts.json';
 import HornedBeast from './HornedBeast';
+import HornForm from './Form';
 
 
 class Main extends Component {
+
+
 
     render() {
         return (
             <div>
                 <Container>
+                    <HornForm onFilter={this.props.handleFilter}/>
                     <Row>
                         {
                             this.props.beasts.map(beast => {

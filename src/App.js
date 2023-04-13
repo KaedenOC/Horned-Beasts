@@ -5,7 +5,7 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import Beasts from './beasts.json';
 import SelectedBeast from './components/SelectedBeast';
-import HornForm from './components/Form';
+// import HornForm from './components/Form';
 
 class App extends Component {
 
@@ -16,8 +16,32 @@ class App extends Component {
       showModal: false,
       beastImg: '',
       beastDescription: '',
+      filteredBeast: Beasts,
     };
   }
+
+  handleFilter = (event) => {
+    const selection = event.target.value;
+
+    let filteredBeast = Beasts.filter((Beasts) => {
+      if (selection === "One Horn") {
+        return Beasts.horns === 1;
+      }
+      if (selection === "Two Horns") {
+        return Beasts.horns === 2;
+      }
+      if (selection === "Three Horns") {
+        return Beasts.horns === 3;
+      }
+      if (selection === "One Hundred Horns") {
+        return Beasts.horns === 100;
+      } else {
+        return Beasts;
+      }
+    });
+
+    this.setState({ filteredBeast: filteredBeast });
+  };
 
   updateSelectedBeast = (beast, url, description) => {
     this.setState({
@@ -37,9 +61,8 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <HornForm />
-        <Main beasts={Beasts} selectedBeast={this.updateSelectedBeast} />
-        <SelectedBeast beasts={Beasts} chosenBeast={this.state.clickedBeast} beastImg={this.state.beastImg} beastDescription={this.state.beastDescription} show={this.state.showModal} onClose={this.closeModalHandler}/>
+        <Main beasts={this.state.filteredBeast} selectedBeast={this.updateSelectedBeast} handleFilter={this.handleFilter}/>
+        <SelectedBeast beasts={Beasts} chosenBeast={this.state.clickedBeast} beastImg={this.state.beastImg} beastDescription={this.state.beastDescription} show={this.state.showModal} onClose={this.closeModalHandler} />
         <Footer />
       </div>
     );
