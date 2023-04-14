@@ -37,3 +37,14 @@ Start time: 2:00pm
 
 Finish time: 9:10pm
 Actual time needed to complete: N/A
+
+## Lab 04
+
+Number and name of feature: Feature #1: Form
+
+Estimate of time needed to complete: N/A
+
+Start time: 1:45pm
+
+Finish time: 5:00pm
+Actual time needed to complete: N/A
